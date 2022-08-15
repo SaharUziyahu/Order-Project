@@ -1,0 +1,11 @@
+img {
+  border-radius: 10px;
+  width: 301px;
+  height: 260px;
+}
+
+.price {
+  font-weight: bold;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: larger;
+}
