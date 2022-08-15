@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import ItemCard from "../components/ItemCard";
 import { useState, useEffect } from "react";
 
+
+
 function Main({ menu, addToCart, cart }) {
   const navigate = useNavigate();
 
@@ -109,18 +111,16 @@ function Main({ menu, addToCart, cart }) {
           </div>
         </div>
       </nav>
-      <main className=" main">
-        <div className="row">
+      <main className="main">
+        <div className='container'>
           {filteredDishs.map((oneItem) => {
             return (
-              <div className="col" key={oneItem.id}>
                 <ItemCard
                   key={oneItem.id}
                   oneItem={oneItem}
                   addToCart={addToCart}
                   cart={cart}
                 />
-              </div>
             );
           })}
         </div>

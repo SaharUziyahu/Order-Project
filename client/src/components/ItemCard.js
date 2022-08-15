@@ -1,39 +1,41 @@
 import React, { useEffect, useState } from "react";
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
 
 function Item({ oneItem, addToCart, cart }) {
   return (
-    <div>
-      <div style={{ padding: "40px", margin: "10px" }}>
-        <div
-          class="card"
-          style={{ backgroundColor: "transparent", border: "none" }}
-        >
-          <button
-            class="btn btn-primary"
-            style={{ position: "absolute", top: "510px" }}
-            onClick={() => {
-              addToCart(oneItem);
-            }}
-          >
-            {" "}
-            Add to Cart
-          </button>
-
-          <div class="foodphoto">
-            <img src={oneItem.imageUrl} />
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">{oneItem.name}</h5>
-            <p class="card-text">{oneItem.description}</p>
-            {oneItem.isGlutenFree ? <span> gluten free</span> : <></>}
-            {oneItem.isVegeterian ? <span> Ⓥ</span> : <></>}
-            <p class="price" name="orderprice">
-              ${oneItem.price}
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
+      <Card sx={{ maxWidth: 345 , height:580 , marginTop:3, position:'relative'}} onClick={() => addToCart(oneItem)}>
+      <CardMedia
+        component="img"
+        height="140"
+        image={oneItem.imageUrl}
+        alt={oneItem.name}
+      />
+      <CardContent>
+        <Typography gutterBottom variant="h5" component="div">
+        {oneItem.name}
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+          {oneItem.description}
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+          {oneItem.isGlutenFree ? <span> gluten free</span> : null}
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+          {oneItem.isVegeterian ? <span> Ⓥ</span> : <></>}
+        </Typography>
+        <Typography variant="body2" color="secondary">
+         ${oneItem.price}
+        </Typography>
+      </CardContent>
+      <CardActions sx={{position:'absolute',bottom:0}}>
+        <Button size="small">Add to Cart</Button>
+      </CardActions>
+    </Card>
   );
 }
 

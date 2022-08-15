@@ -7,9 +7,10 @@ body {
   display: grid;
   font-family: Avenir, sans-serif;
   color: #111;
+  background-color: rgb(208, 239, 255);
 }
 
-.button{
+.button {
   position: absolute;
   left: 20%;
   top: 50%;
@@ -26,6 +27,7 @@ body {
   padding: 19px 22px;
   transition: all 0.2s ease;
 }
+
 .cta:before {
   content: "";
   position: absolute;
@@ -38,6 +40,7 @@ body {
   height: 56px;
   transition: all 0.3s ease;
 }
+
 .cta span {
   position: relative;
   font-size: 16px;
@@ -47,6 +50,7 @@ body {
   text-transform: uppercase;
   vertical-align: middle;
 }
+
 .cta svg {
   position: relative;
   top: 0;
@@ -59,13 +63,16 @@ body {
   transform: translateX(-5px);
   transition: all 0.3s ease;
 }
+
 .cta:hover:before {
   width: 100%;
   background: #ffab9d;
 }
+
 .cta:hover svg {
   transform: translateX(0);
 }
+
 .cta:active {
   transform: scale(0.96);
 }
