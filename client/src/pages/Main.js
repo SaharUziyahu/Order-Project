@@ -1,8 +1,7 @@
-import React from "react";
+import React ,{ useState, useEffect }from "react";
 import "./Main.css";
 import { useNavigate } from "react-router-dom";
 import ItemCard from "../components/ItemCard";
-import { useState, useEffect } from "react";
 
 
 
